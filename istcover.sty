@@ -54,58 +54,58 @@
 		{\fontsize{16}{20}\bf \color{erigrid2blue} My Awesome Project} \\[12.5ex]
     	{\fontsize{14}{16} \rm Project Acronym: \bf Project Name} \\[2.5ex]
     	{\fontsize{14}{16} \rm Project Number: \bf 870620} \\[12.5ex]    	
-    	{\fontsize{14}{16} \bf \deliv@name} \\[2.5ex]
-    	{\fontsize{14}{16} \bf Part B} \\[12.5ex]    	
-    	{\fontsize{14}{16} \rm \nth{\deliv@number}~\deliv@stitle} \\[2.5ex]
-    	{Period Covered by the Report: \deliv@from~to~\deliv@to}        	
+    	% {\fontsize{14}{16} \bf \deliv@name} \\[2.5ex]
+    	% {\fontsize{14}{16} \bf Part B} \\[12.5ex]    	
+    	% {\fontsize{14}{16} \rm \nth{\deliv@number}~\deliv@stitle} \\[2.5ex]
+    	% {Period Covered by the Report: \deliv@from~to~\deliv@to}        	
     \end{center}
   \end{minipage}
 
-	\begin{textblock*}{1.00\linewidth}(2.50cm,22cm)
-		\begin{tabular}{p{.21\linewidth}p{.64\linewidth}}
-			\textit{Funding Instrument:} & Research and Innovation Action \\
-			\textit{Call:} & H2020-INFRAIA-2019-1 \\
-			\textit{Call Topic:} & INFRAIA-01-2018-2019 Integrating Activities for Advanced\newline Communities \\
-			& \\
-			\textit{Project Start:} & 1 April 2020 \\
-			\textit{Project Duration:} & 54 months \\
-			& \\
-			\textit{Beneficiary in Charge:} & \deliv@owner \\
-			& \\
-			\ifx\doi@number\empty
-			\else
-			\textit{Document Identifier:} & doi:\href{https://doi.org/\doi@number}{\doi@number}
-			\fi 
-			\\
-		\end{tabular} 	
-	\end{textblock*}
+	% \begin{textblock*}{1.00\linewidth}(2.50cm,18cm)
+	% 	\begin{tabular}{p{.21\linewidth}p{.64\linewidth}}
+	% 		\textit{Funding Instrument:} & Research and Innovation Action \\
+	% 		\textit{Call:} & H2020-INFRAIA-2019-1 \\
+	% 		\textit{Call Topic:} & INFRAIA-01-2018-2019 Integrating Activities for Advanced\newline Communities \\
+	% 		& \\
+	% 		\textit{Project Start:} & 1 April 2020 \\
+	% 		\textit{Project Duration:} & 54 months \\
+	% 		& \\
+	% 		\textit{Beneficiary in Charge:} & \deliv@owner \\
+	% 		& \\
+	% 		\ifx\doi@number\empty
+	% 		\else
+	% 		\textit{Document Identifier:} & doi:\href{https://doi.org/\doi@number}{\doi@number}
+	% 		\fi 
+	% 		\\
+	% 	\end{tabular} 	
+	% \end{textblock*}
 
-%	\begin{textblock*}{0.85\linewidth}(2.50cm,24cm)	
-%		{\fontsize{9}{11}\selectfont
-%	  	\setlength{\parindent}{0pt}
-%		\def\arraystretch{1.25}			
-%		\arrayrulecolor{erigrid2gray}
-%			\begin{tabular}[t]{!{\color{erigrid2gray}\vrule}p{4em}!{\color{erigrid2gray}\vrule}p{.8\linewidth}!{\color{erigrid2gray}\vrule}p{2em}!{\color{erigrid2gray}\vrule}}
-%				\rowcolor{erigrid2gray}\multicolumn{3}{c}
-%				{\rule{0pt}{2.5ex}\color{white}\bf Dissemination Level \rule[-1ex]{0pt}{2.5ex}}
-%				\\
-%				\rowcolor{white}
-%				PU & Public & \istTestDisseminationLevel{PU} \\
-%				\rowcolor{erigrid2lightergray}
-%				PP &  Restricted to other programme participants (including the
-%				Commission Services)
-%				& \istTestDisseminationLevel{PP} \\
-%				\rowcolor{white}
-%				RE &  Restricted to a group specified by the Consortium (including the Commission Services)
-%				& \istTestDisseminationLevel{RE} \\
-%				\rowcolor{erigrid2lightergray}
-%				CO &
-%				Confidential, only for members of the Consortium (including the Commission Services)
-%				& \istTestDisseminationLevel{CO} \\
-%				\hline
-%			\end{tabular}
-%		}
-%	\end{textblock*}
+	\begin{textblock*}{0.85\linewidth}(2.50cm,24cm)	
+		{\fontsize{9}{11}\selectfont
+	  	\setlength{\parindent}{0pt}
+		\def\arraystretch{1.25}			
+		\arrayrulecolor{erigrid2gray}
+			\begin{tabular}[t]{!{\color{erigrid2gray}\vrule}p{4em}!{\color{erigrid2gray}\vrule}p{.8\linewidth}!{\color{erigrid2gray}\vrule}p{2em}!{\color{erigrid2gray}\vrule}}
+				\rowcolor{erigrid2gray}\multicolumn{3}{c}
+				{\rule{0pt}{2.5ex}\color{white}\bf Dissemination Level \rule[-1ex]{0pt}{2.5ex}}
+				\\
+				\rowcolor{white}
+				PU & Public & \istTestDisseminationLevel{PU} \\
+				\rowcolor{erigrid2lightergray}
+				PP &  Restricted to other programme participants (including the
+				Commission Services)
+				& \istTestDisseminationLevel{PP} \\
+				\rowcolor{white}
+				RE &  Restricted to a group specified by the Consortium (including the Commission Services)
+				& \istTestDisseminationLevel{RE} \\
+				\rowcolor{erigrid2lightergray}
+				CO &
+				Confidential, only for members of the Consortium (including the Commission Services)
+				& \istTestDisseminationLevel{CO} \\
+				\hline
+			\end{tabular}
+		}
+	\end{textblock*}
 
   \endgroup
 
@@ -133,7 +133,7 @@
 	\clearpage
 	\newgeometry{a4paper,top=2.50cm,left=2.50cm,right=2.50cm,bottom=3.30cm,headsep=0.50cm,footskip=-0.77cm}	
 	\vspace*{-0.05cm}
-	\istdis	  %%%%% see istprog.sty
+	  %\istdis	  %%%%% see istprog.sty
     \istmakechangelog
 }
 
