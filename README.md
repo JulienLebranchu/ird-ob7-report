@@ -23,28 +23,37 @@ styles should be (minimally):
     \istChange{...}{}{...}{}
     \istChange{}{}{}{}
 
-    %% Deliverable information
-    \ProjectAcronym{ERIGrid 2.0}
-    \ProjectFullTitle{European Research Infrastructure supporting Smart Grid and Smart Energy Systems Research, Technology Development, Validation and Roll Out -- Second Edition}
-    \ProjectRefNo{870620}
-    \delivNumber{Dx.y}
-    \delivName{[Title as appears in the DoA]}
-    \delivShortTile{Short Title}
-    %% Lead partner
-    \delivResponsible{[Responsible partner]} 
-    \delivVersion{vn.n}
-    \ActualDate{dd/mm/yyyy}
-    \delivDissLevel{CO}
-    \delivType{[Report, Prototype, Other]}
-    \delivWP{WPx} % Workpackage x; not used at the moment
-    \delivAuthor{Names of co-authors  (partners short names)}
-    \delivFPAuthor{Names of co-authors  (partners short names)}
-    \delivStatus{Draft}
-    \delivKeywords{[List of free keywords relevant to the deliverable]}
-    \delivTask{Tn.n}
-    \delivStatus{[Draft, v1.0, v2.0, Final version]}
-    \delivExecSummary{This is a summary of the deliverable; a paragraph or
-    so to go on the cover page} 
+  % Project Meta Information
+\ProjectFullTitle{Report title}
+\ProjectAcronym{Acronyme}
+\ProjectRefNo{Reference}
+
+% reporter Number and Title (according to DoA)
+\reportName{[Title as appears in the DoA]}
+
+% DOI Number (will be provided by the coordinator)
+\doiNumber{} % leave empty if no DOI Number is provided
+
+
+\reportAuthor{Author}
+\reportFPAuthor{}
+
+
+% report Short Title
+\reportShortTile{Short title}
+
+% report Version, Contractual and Actual Date, Dissemination Level, Type
+\reportVersion{v1.0}
+\ActualDate{\today}
+\reportDissLevel{CO} % PU, PP, RE, CO
+
+% Provision of Keywords (about 5-10)
+\reportKeywords{[List of free keywords relevant to the report]}
+
+\reportType{Rapport}
+
+% report Status
+\reportStatus{d} %% d = draft, f = final, s = submitted
     
     \makecover
     % page 3: table of contents

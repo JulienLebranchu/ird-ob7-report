@@ -17,9 +17,9 @@
 \usepackage{cleveref}
 \usepackage[printonlyused]{acronym}
 \hypersetup{
-	pdftitle={0th Periodic Report},
-	pdfauthor={[Names of co-authors (partners short names)]},
-	pdfkeywords={Periodic Report, European Union (EU), H2020, Project, ERIGrid 2.0, GA GA 870620},
+	pdftitle={},
+	pdfauthor={},
+	pdfkeywords={},
 }
 
 \graphicspath{ {graphics/} }
@@ -47,35 +47,36 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Project Meta Information
-\ProjectFullTitle{European Research Infrastructure supporting Smart Grid and Smart Energy Systems Research, Technology Development, Validation and Roll Out -- Second Edition}
-\ProjectAcronym{ERIGrid 2.0}
-\ProjectRefNo{870620}
+\ProjectFullTitle{Report title}
+\ProjectAcronym{Acronyme}
+\ProjectRefNo{Reference}
 
-% Report Number, use either "1", "2", or "3" for the corresponding reporting period
-\delivNumber{0}
+% reporter Number and Title (according to DoA)
+\reportName{[Title as appears in the DoA]}
 
-% Period covered by the report
-\delivFrom{dd/mm/yyyy}
-\delivTo{dd/mm/yyyy}
+% DOI Number (will be provided by the coordinator)
+\doiNumber{} % leave empty if no DOI Number is provided
 
-% Report Responsible Partner
-\delivResponsible{AIT Austrian Institute of Technology (AIT)} 
 
-% Report Version, Contractual and Actual Date, Dissemination Level, Type
-\delivVersion{vn.n}
-\ContractualDate{dd/mm/yyyy}
-\ActualDate{dd/mm/yyyy}
-\delivDissLevel{PU} % PU, PP, RE, CO
-\delivType{[Report, Prototype, Other]}
+\reportAuthor{}
+\reportFPAuthor{}
 
-% List of Main Authors (usually from the responsible partner)
-\delivAuthor{[Names of co-authors (partners short names)]}
 
-% List of Co-Authors (all other co-authors should be listed here)
-\delivFPAuthor{[Names of co-authors (partners short names)]}
+% report Short Title
+\reportShortTile{Short title}
 
-% Report Status
-\delivStatus{d} %% d = draft, f = final, s = submitted
+% report Version, Contractual and Actual Date, Dissemination Level, Type
+\reportVersion{v1.0}
+\ActualDate{\today}
+\reportDissLevel{CO} % PU, PP, RE, CO
+
+% Provision of Keywords (about 5-10)
+\reportKeywords{[List of free keywords relevant to the report]}
+
+\reportType{Rapport}
+
+% report Status
+\reportStatus{d} %% d = draft, f = final, s = submitted
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Change Log
@@ -125,12 +126,12 @@
 %%% Deliverable Content
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{sections/work-carried-out}
-\input{sections/exploitation-dissemination}
-\input{sections/data-management}
-\input{sections/follow-up-reviews}
-\input{sections/deviations}
-
+\input{sections/summary}
+\input{sections/introduction}
+\input{sections/section-x}
+\input{sections/section-y}
+\input{sections/section-z}
+\input{sections/conclusions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% References
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

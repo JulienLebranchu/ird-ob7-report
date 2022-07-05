@@ -1,4 +1,4 @@
-%% erigrid2.sty
+%% ird-ob7.sty
 %%
 %% Style file for documents of the embeddia project (adapted from fracas.sty)
 %%
@@ -18,7 +18,7 @@
 % package description
 %%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{IRD-OB7}[2021/10/17 ird-ob7 style sheet v1.0]
+\ProvidesPackage{ird-ob7}[2021/10/17 ird-ob7 style sheet v1.0]
 % packages and includes
 \input{istprog.sty}
 \RequirePackage{a4wide}	% A4
@@ -32,10 +32,10 @@
 	filecolor=black,      
 	citecolor=black,
 	urlcolor=blue,
-	pdftitle=\deliv@stitle,
-	pdfauthor=\deliv@authors,
-	pdfsubject=IRD-OB7 Project Deliverable,
-	pdfkeywords=\deliv@keywords,
+	pdftitle=\proj@title,
+	pdfauthor=\report@authors,
+	pdfsubject=IRD-OB7 Project Report,
+	pdfkeywords=\report@keywords,
 	pdfcreator=pdflatex,
 	pdfproducer=Overleaf,
 }
@@ -50,8 +50,8 @@
 % \input{a4wide.sty}
 \typeout{Document Style `ird-ob7 ' <17 October, 2021>.}
 
-\def\deliv@checkmark{ x }
-\DeclareOption{checkmark}{\def\deliv@checkmark{$\underline{\checkmark}$}}
+\def\report@checkmark{ x }
+\DeclareOption{checkmark}{\def\report@checkmark{$\underline{\checkmark}$}}
 %\ExecuteOptions{checkmark}
 \ProcessOptions
 
@@ -59,13 +59,13 @@
 % Project references
 %%%%%%%%%%%%%%%%%%%%
 
-\ProjectRefNo{INFRAIA \textendash \space 870620}
-\ProjectFP{H2020}
-\ProjectAcronym{ERIGrid 2.0}
-\ProjectFullTitle{European Research Infrastructure supporting Smart Grid and Smart Energy Systems Research, Technology Development, Validation and Roll Out -- Second Edition}
-\ProjectInstrument{RIA}
-\ProjectStartDuration{1 April 2020 / 54 Months}
-\Security{Public}
+% \ProjectRefNo{INFRAIA \textendash \space 870620}
+% \ProjectFP{H2020}
+% \ProjectAcronym{ERIGrid 2.0}
+% \ProjectFullTitle{European Research Infrastructure supporting Smart Grid and Smart Energy Systems Research, Technology Development, Validation and Roll Out -- Second Edition}
+% \ProjectInstrument{RIA}
+% \ProjectStartDuration{1 April 2020 / 54 Months}
+% \Security{Public}
 
 % \partners{ 
 % \textbf{AIT Austrian Institute of Technology} \\

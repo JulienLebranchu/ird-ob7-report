@@ -7,10 +7,11 @@
 %%			2014/01/10 Adaptations for Metalogue
 %%			2019/05/31 Adaptations for Embeddia
 %%			2020/05/18 Adaptations for ERIGrid 2.0 (TS)
-%%          2021/07/22 Adaptations for ERIGrid 2.0 periodic reporting (TS)
+%%      2021/07/22 Adaptations for IRD-OB7 reporting
 
 %\usepackage{xstring}
-\usepackage{lastpage}
+%\usepackage{lastpage}
+\usepackage{totpages}
 \usepackage{fancyhdr}
 \usepackage{stringstrings}
 \usepackage{ifthen}
@@ -48,17 +49,17 @@
 %%% Deliverable information sheet.
 
 \newcommand{\GetDeliverableID}{%
-\capitalizewords[e]{\deliv@stitle}
+\capitalizewords[e]{\report@stitle}
 \alphabetic[e]{\thestring}
-\edef\deliv@captitle{\thestring}
-\testmatchingchar{\deliv@status}{1}{d}
-ERIGrid2-\convertchar{\deliv@number}{.}{}-\noblanks{\deliv@captitle}-\deliv@status\ifmatchingchar{-\deliv@version}\else{}\fi
-%\IfBeginWith{\deliv@status}{d}{-\deliv@version}{}
+\edef\report@captitle{\thestring}
+\testmatchingchar{\report@status}{1}{d}
+OB7-\convertchar{\report@number}{.}{}-\noblanks{\report@captitle}-\report@status\ifmatchingchar{-\report@version}\else{}\fi
+%\IfBeginWith{\report@status}{d}{-\report@version}{}
 }
 
 % istdis project refs
 \newcommand{\istdis}{
-  {\fontsize{12}{15}\bf\color{erigrid2blue}Report Information}\\[1.5ex] 
+  {\fontsize{12}{15}\bf\color{erigrid2blue}Project Information}\\[1.5ex] 
   \setlength{\parindent}{0pt}
   \def\arraystretch{1.25}
   \arrayrulecolor{erigrid2gray}
@@ -67,37 +68,31 @@ ERIGrid2-\convertchar{\deliv@number}{.}{}-\noblanks{\deliv@captitle}-\deliv@stat
     \rowcolor{erigrid2gray}\multicolumn{2}{c}
     {\rule{0pt}{2.5ex}\color{white}\bf Document Administrative Information} \\
     \rowcolor{white}
-    Project Acronym: & ERIGrid 2.0 \\
+    Project Acronym: & \proj@acronym \\
     \rowcolor{erigrid2lightergray}
-    Project Number: & 870620 \\
-    \rowcolor{white}
-    Report Number: & \deliv@number\\
-    \rowcolor{erigrid2lightergray}
-    Report Full Title: & \parbox{\linewidth}{\deliv@name} \\
-    \rowcolor{white}
-    Report Short Title: & \deliv@stitle \\
+    Project Number: & \proj@ref@no \\
     \rowcolor{erigrid2lightergray}
     Document Identifier: & \GetDeliverableID{} \\
     \rowcolor{white}
-    Beneficiary in Charge: & \deliv@owner \\
+    Beneficiary in Charge: & \report@owner \\
     \rowcolor{erigrid2lightergray}
-    Report Version: & \deliv@version \\
+    Report Version: & \report@version \\
     \rowcolor{white}
-    Contractual Date: & \deliv@contrdate \\
+    Contractual Date: & \report@contrdate \\
 	\rowcolor{erigrid2lightergray}
-    Report Submission Date: & \deliv@actdate \\
+    Report Submission Date: & \report@actdate \\
     \rowcolor{white}
-%    Dissemination Level: & \deliv@disslevel \\
-%    \rowcolor{erigrid2lightergray}
-%    Nature: & \deliv@type \\
-%    \rowcolor{white}
-    Lead Author(s): & \deliv@authors \\
+    Dissemination Level: & \report@disslevel \\
     \rowcolor{erigrid2lightergray}
-    Co-author(s):& \deliv@FPauthors \\
+    Nature: & \report@type \\
     \rowcolor{white}
-%	Keywords: & \deliv@keywords \\
-%    \rowcolor{erigrid2lightergray}
-    Status: & \deliv@status@table \\
+    Lead Author(s): & \report@authors \\
+    \rowcolor{erigrid2lightergray}
+    Co-author(s):& \report@FPauthors \\
+    \rowcolor{white}
+	Keywords: & \report@keywords \\
+    \rowcolor{erigrid2lightergray}
+    Status: & \report@status@table \\
     \hline
   \end{tabular}
 }\\[3ex]
@@ -149,19 +144,19 @@ ERIGrid2-\convertchar{\deliv@number}{.}{}-\noblanks{\deliv@captitle}-\deliv@stat
 	
 	\vspace*{5cm}
 
-  {\fontsize{12}{15}\bf\color{erigrid2blue}Partners}\\%[2ex] 
+  {\fontsize{12}{15}\bf\color{erigrid2blue}Contributors}\\%[2ex] 
 	{\includegraphics[width=1.03\linewidth]{partners}}\\[1ex]
 
 	{\fontsize{12}{15}\bf\color{erigrid2blue}Disclaimer	}\\[2ex] 
   
 	{\small \disclaimer}\\[1ex]
 
-	\renewcommand{\doclicenseLongText}{\textcopyright~\the\year~by the authors, the \erigrid2. \doclicenseText}
+	\renewcommand{\doclicenseLongText}{\textcopyright~\the\year~by the authors, the \teams. \doclicenseText}
 
 	{\fontsize{12}{15}\bf\color{erigrid2blue}Copyright Notice}\\[2.0ex] 
-	\ifthenelse{\equal{\deliv@disslevel}{PU}}
+	\ifthenelse{\equal{\report@disslevel}{PU}}
 	{\vspace*{-3.0ex}\small\doclicenseLicense}
-	{\small\textcopyright~\the\year~by the authors, the \erigrid2.}
+	{\small\textcopyright~\the\year~by the authors, the \teams.}
 }
   
 \def\ProjectRefNo#1{\gdef\proj@ref@no{#1}}
@@ -170,17 +165,15 @@ ERIGrid2-\convertchar{\deliv@number}{.}{}-\noblanks{\deliv@captitle}-\deliv@stat
 \def\ProjectFullTitle#1{\gdef\proj@title{#1}}
 \def\ProjectInstrument#1{\gdef\proj@instrument{#1}}
 \def\ProjectStartDuration#1{\gdef\proj@start@duration{#1}}
-\def\Security#1{\gdef\deliv@security{#1}}
-\def\ContractualDate#1{\gdef\deliv@contrdate{#1}}
-\def\ActualDate#1{\gdef\deliv@actdate{#1}}
-\def\delivFrom#1{\gdef\deliv@from{#1}}
-\def\delivTo#1{\gdef\deliv@to{#1}}
-\def\delivNumber#1{\gdef\deliv@number{#1}}
-\def\delivName#1{\gdef\deliv@name{#1}}
+\def\Security#1{\gdef\report@security{#1}}
+\def\ContractualDate#1{\gdef\report@contrdate{#1}}
+\def\ActualDate#1{\gdef\report@actdate{#1}}
+\def\reportNumber#1{\gdef\report@number{#1}}
+\def\reportName#1{\gdef\report@name{#1}}
 \def\doiNumber#1{\gdef\doi@number{#1}}
-\def\delivShortTile#1{\gdef\deliv@stitle{#1}}
-\def\delivType#1{\gdef\deliv@type{#1}}
-\def\delivStatus#1{%
+\def\reportShortTile#1{\gdef\report@stitle{#1}}
+\def\reportType#1{\gdef\report@type{#1}}
+\def\reportStatus#1{%
   %\StrLeft{#1}{1}[\firstchar]%
   %\edef\temparg{\firstchar}%
   \substring[e]{#1}{1}{2}
@@ -188,41 +181,41 @@ ERIGrid2-\convertchar{\deliv@number}{.}{}-\noblanks{\deliv@captitle}-\deliv@stat
   \edef\tempf{\detokenize{f}}% final
   \edef\temps{\detokenize{s}}% submitted
   \if\temparg\tempf%
-  {\gdef\deliv@status{final}%
-    \gdef\deliv@status@table{\underline{~~~} draft, \underline{\deliv@checkmark} final, \underline{~~~} submitted}}
+  {\gdef\report@status{final}%
+    \gdef\report@status@table{\underline{~~~} draft, \underline{\report@checkmark} final, \underline{~~~} submitted}}
   \else %
     \if\temparg\temps%
-     {\gdef\deliv@status{submitted}%
-       \gdef\deliv@status@table{\underline{~~~} draft, \underline{~~~} final, \underline{\deliv@checkmark} submitted}}
+     {\gdef\report@status{submitted}%
+       \gdef\report@status@table{\underline{~~~} draft, \underline{~~~} final, \underline{\report@checkmark} submitted}}
      \else
-     {\gdef\deliv@status{draft}%
-       \gdef\deliv@status@table{\underline{\deliv@checkmark} draft, \underline{~~~} final, \underline{~~~} submitted}}
+     {\gdef\report@status{draft}%
+       \gdef\report@status@table{\underline{\report@checkmark} draft, \underline{~~~} final, \underline{~~~} submitted}}
      \fi
   \fi%
   % \ifthenelse{\equal{#1}{f}}%\or\equal{\lowercase{#1}}{\string final}}%
-  % {\gdef\deliv@status{final}%
-  %  \gdef\deliv@status@table{\_ draft, $\underline{\checkmark}$ final, \_ submitted (tick one)}}%
-  %  {\gdef\deliv@status{\lowercase{#1}}%
-  %   \gdef\deliv@status@table{$\underline{\checkmark}$ draft, \_ final, \_ submitted (tick one)}}%
+  % {\gdef\report@status{final}%
+  %  \gdef\report@status@table{\_ draft, $\underline{\checkmark}$ final, \_ submitted (tick one)}}%
+  %  {\gdef\report@status{\lowercase{#1}}%
+  %   \gdef\report@status@table{$\underline{\checkmark}$ draft, \_ final, \_ submitted (tick one)}}%
 }
-\def\delivVersion#1{\gdef\deliv@version{#1}}
-\def\NumberOfPages#1{\gdef\deliv@pages{#1}}
-\def\delivMonth#1{\gdef\deliv@month{#1}}
-\def\delivYear#1{\gdef\deliv@year{#1}}
-\def\delivDissLevel#1{\gdef\deliv@disslevel{#1}}
+\def\reportVersion#1{\gdef\report@version{#1}}
+\def\NumberOfPages#1{\gdef\report@pages{#1}}
+\def\reportMonth#1{\gdef\report@month{#1}}
+\def\reportYear#1{\gdef\report@year{#1}}
+\def\reportDissLevel#1{\gdef\report@disslevel{#1}}
 
-\def\delivWP#1{\gdef\deliv@wp{#1}}
-\def\delivWPName#1{\gdef\deliv@wpname{#1}}
-\def\delivTask#1{\gdef\deliv@task{#1}}
-\def\delivResponsible#1{\gdef\deliv@owner{#1}}
-\def\delivOtherContributors#1{\gdef\deliv@others{#1}}
-\def\delivAuthor#1{\gdef\deliv@authors{#1}\author{#1}}
-\def\delivFPAuthor#1{\gdef\deliv@FPauthors{#1}\author{#1}}
-\def\delivProjectOfficer#1{\gdef\deliv@officer{#1}}
-\def\delivKeywords#1{\gdef\deliv@keywords{#1}}
-\def\delivAbstract#1{\gdef\deliv@abstract{#1}}
-\def\delivExecSummary#1{\gdef\deliv@abstract{#1}}
-\def\delivExecSummary#1{\gdef\deliv@abstract{#1}}
+\def\reportWP#1{\gdef\report@wp{#1}}
+\def\reportWPName#1{\gdef\report@wpname{#1}}
+\def\reportTask#1{\gdef\report@task{#1}}
+\def\reportResponsible#1{\gdef\report@owner{#1}}
+\def\reportOtherContributors#1{\gdef\report@others{#1}}
+\def\reportAuthor#1{\gdef\report@authors{#1}\author{#1}}
+\def\reportFPAuthor#1{\gdef\report@FPauthors{#1}\author{#1}}
+\def\reportProjectOfficer#1{\gdef\report@officer{#1}}
+\def\reportKeywords#1{\gdef\report@keywords{#1}}
+\def\reportAbstract#1{\gdef\report@abstract{#1}}
+\def\reportExecSummary#1{\gdef\report@abstract{#1}}
+\def\reportExecSummary#1{\gdef\report@abstract{#1}}
 
 \newcounter{@changecount}
 \setcounter{@changecount}{0}
@@ -245,8 +238,8 @@ ERIGrid2-\convertchar{\deliv@number}{.}{}-\noblanks{\deliv@captitle}-\deliv@stat
 \lhead{\fancyplain{}{}}
 \chead{\fancyplain{}{
 	\begin{tabular}{m{0.25\linewidth} m{0.47\linewidth} m{0.25\linewidth}}
-		{\footnotesize INFRAIA-2019-1} & 
-		%\centering{\footnotesize{\deliv@stitle}} 
+		{\footnotesize \proj@acronym\ -- \proj@ref@no} & 
+		%\centering{\footnotesize{\report@stitle}} 
 		& 
 		\makebox[0.24\textwidth][r]{\includegraphics[width=0.40\linewidth]{graphics/logo}} \\
 		\hline
@@ -257,7 +250,11 @@ ERIGrid2-\convertchar{\deliv@number}{.}{}-\noblanks{\deliv@captitle}-\deliv@stat
 \cfoot{\fancyplain{}{
 	\begin{tabular}{m{0.25\linewidth} m{0.47\linewidth} m{0.25\linewidth}}
 %		\hline
-		{\footnotesize \nth{\deliv@number}~\deliv@stitle} & 
+    \ifx\report@version\empty		
+    \else
+    {\footnotesize \report@type\ -- \report@version}  
+    \fi
+    &
 		\ifx\doi@number\empty
 		\else
 		\centering {\footnotesize doi:\href{https://doi.org/\doi@number}{\doi@number}} 
@@ -273,56 +270,53 @@ ERIGrid2-\convertchar{\deliv@number}{.}{}-\noblanks{\deliv@captitle}-\deliv@stat
 \Security{??}
 \ContractualDate{}
 \ActualDate{\today{}}
-\delivNumber{Dn.n}
-\delivName{??}
-\delivType{??}
+\reportNumber{Dn.n}
+\reportName{??}
+\reportType{??}
 
-\delivWP{??}
-\delivWPName{??}
-\delivResponsible{??}
-\delivOtherContributors{??}
-\delivAuthor{??}
-\delivProjectOfficer{??}
-\delivKeywords{??}
-\delivAbstract{??}
+\reportWP{??}
+\reportWPName{??}
+\reportResponsible{??}
+\reportOtherContributors{??}
+\reportAuthor{??}
+\reportProjectOfficer{??}
+\reportKeywords{??}
+\reportAbstract{??}
 
 \ProjectRefNo{870620}
 \ProjectAcronym{ERIGrid 2.0}
 \ProjectFullTitle{European Research Infrastructure supporting Smart Grid and Smart Energy Systems Research, Technology Development, Validation and Roll Out -- Second Edition}
 \Security{Restricted}
 \ContractualDate{\_\_\_\_ \_\_\_\_\_ 202\_}
-\delivMonth{Month}
-\delivYear{202x}
+\reportMonth{Month}
+\reportYear{202x}
 \ActualDate{\_\_\_\_\_\_ 202\_}
-\delivFrom{dd/mm/yyyy}
-\delivTo{dd/mm/yyyy}
-\delivNumber{Dn.n}
-\delivName{Periodic Technical Report}
-\delivShortTile{Periodic Report}
-\delivDissLevel{PP}
-\delivType{[Report, Prototype, Other]}
-\delivStatus{d}
-\delivWP{WPx} % Workpackage x
-\delivWPName{[Title as appears in DoA]} % WP name
-\delivResponsible{[Responsible partner]} 
-\delivOtherContributors{[List of partners contributed to the deliverable]} 
-\delivVersion{\today}
-\delivAuthor{[List of individuals contributed to the deliverable]}
-\delivFPAuthor{...}
-\doiNumber{}
+\reportNumber{Dn.n}
+\reportName{[Title as appears in the DoA]}
+\reportShortTile{Report Short Title Here}
+\reportDissLevel{PP}
+\reportType{[Report, Prototype, Other]}
+\reportStatus{d}
+\reportWP{WPx} % Workpackage x
+\reportWPName{[Title as appears in DoA]} % WP name
+\reportResponsible{[Responsible partner]} 
+\reportOtherContributors{[List of partners contributed to the deliverable]} 
+\reportVersion{\today}
+\reportAuthor{[List of individuals contributed to the deliverable]}
+\reportFPAuthor{...}
 
-\delivOtherContributors{All partners}
-\delivProjectOfficer{Project officer}
+\reportOtherContributors{All partners}
+\reportProjectOfficer{Project officer}
 
-\delivKeywords{[List of free keywords relevant to the deliverable]}
+\reportKeywords{[List of free keywords relevant to the deliverable]}
 
-\delivDissLevel{CO}
-\delivTask{Tn.n}
-\delivVersion{0.0}
+\reportDissLevel{CO}
+\reportTask{Tn.n}
+\reportVersion{0.0}
 \NumberOfPages{\pageref{LastPage(excluding front matter)}}
 
 \newcommand{\istTestDisseminationLevel}[1]{%
-  \ifthenelse{\equal{\deliv@disslevel}{#1}}
+  \ifthenelse{\equal{\report@disslevel}{#1}}
   {~~\checkmark}
   {}
 }

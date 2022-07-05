@@ -1,6 +1,6 @@
 %% istcover.sty
 %%
-%% Cover page for IRD-OB7 report (adapted from ERIGrid 2.0, EMBEDDIA, TALK, FRACAS and TRINDI)
+%% Cover page for ERIGrid 2.0 deliverables (adapted from EMBEDDIA, TALK, FRACAS and TRINDI)
 %%
 %%
 %%			History:
@@ -18,8 +18,7 @@
 %%										(deliverable identification sheet)
 %%			2019/05/31 Adaptations for Embeddia 
 %%			2020/05/18 Adaptations for ERIGrid 2.0 (TS)
-%%      2021/07/22 Adaptations for ERIGrid 2.0 periodic reporting (TS)
-%%      2021/10/17 Adaptations for IRD-OB7 reporting (TS)
+%%          2021/07/22 Adaptations for IRD-OB7 reporting
 %% $Id: istcover.sty,v 1.2 2007/01/05 12:05:33 olemon Exp $
 
 %%
@@ -51,13 +50,12 @@
   \hspace*{14mm}
   \begin{minipage}{.85\linewidth}
 	\begin{center}
-		{\fontsize{16}{20}\bf \color{erigrid2blue} My Awesome Project} \\[12.5ex]
-    	{\fontsize{14}{16} \rm Project Acronym: \bf Project Name} \\[2.5ex]
-    	{\fontsize{14}{16} \rm Project Number: \bf 870620} \\[12.5ex]    	
-    	% {\fontsize{14}{16} \bf \deliv@name} \\[2.5ex]
-    	% {\fontsize{14}{16} \bf Part B} \\[12.5ex]    	
-    	% {\fontsize{14}{16} \rm \nth{\deliv@number}~\deliv@stitle} \\[2.5ex]
-    	% {Period Covered by the Report: \deliv@from~to~\deliv@to}        	
+		{\fontsize{18}{22}\bf \color{erigrid2blue} \proj@title}\\[10ex]
+		{\fontsize{14}{16} \rm \bf \proj@acronym } \\[2.5ex]
+		{\fontsize{14}{16} \rm \bf \proj@ref@no } \\[12.5ex]    	
+    	%{\fontsize{14}{16}\bf \report@wpname} \\[10ex]
+    	%\textit{Deliverable \report@number} \\[.6ex]
+		%{\fontsize{14}{16}\bf \report@name} \\[10ex]    	
     \end{center}
   \end{minipage}
 
@@ -70,7 +68,7 @@
 	% 		\textit{Project Start:} & 1 April 2020 \\
 	% 		\textit{Project Duration:} & 54 months \\
 	% 		& \\
-	% 		\textit{Beneficiary in Charge:} & \deliv@owner \\
+	% 		\textit{Beneficiary in Charge:} & \report@owner \\
 	% 		& \\
 	% 		\ifx\doi@number\empty
 	% 		\else
@@ -92,15 +90,14 @@
 				\rowcolor{white}
 				PU & Public & \istTestDisseminationLevel{PU} \\
 				\rowcolor{erigrid2lightergray}
-				PP &  Restricted to other programme participants (including the
-				Commission Services)
+				PP &  Restricted to other programme participants
 				& \istTestDisseminationLevel{PP} \\
 				\rowcolor{white}
-				RE &  Restricted to a group specified by the Consortium (including the Commission Services)
+				RE &  Restricted to a group specified by the team
 				& \istTestDisseminationLevel{RE} \\
 				\rowcolor{erigrid2lightergray}
 				CO &
-				Confidential, only for members of the Consortium (including the Commission Services)
+				Confidential, only for members of the team
 				& \istTestDisseminationLevel{CO} \\
 				\hline
 			\end{tabular}
@@ -133,7 +130,7 @@
 	\clearpage
 	\newgeometry{a4paper,top=2.50cm,left=2.50cm,right=2.50cm,bottom=3.30cm,headsep=0.50cm,footskip=-0.77cm}	
 	\vspace*{-0.05cm}
-	  %\istdis	  %%%%% see istprog.sty
+	\istdis	  %%%%% see istprog.sty
     \istmakechangelog
 }
 

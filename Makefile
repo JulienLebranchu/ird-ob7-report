@@ -1,9 +1,11 @@
 BASE=template
-DIRECTORY=ERIGrid2Deliverable
-bib:
-	bibtool  -v -d -s -- 'preserve.key.case=on' -x $(BASE).aux > $(BASE)-new.bib
-	mv $(BASE).bib	$(BASE)-old.bib	
-	mv $(BASE)-new.bib $(BASE).bib
+DIRECTORY=ird-ob7-report-template
+
+all:
+	pdflatex $(BASE)
+
+clean:
+	rm -f $(BASE).{out,aux,bbl,blg,log,toc,ptb,tod,fls,fdb_latexmk,lof,lot,chl,synctex.gz}
 
 #dist: bib
 dist:
