@@ -23,37 +23,37 @@ styles should be (minimally):
     \istChange{...}{}{...}{}
     \istChange{}{}{}{}
 
-  % Project Meta Information
-\ProjectFullTitle{Report title}
-\ProjectAcronym{Acronyme}
-\ProjectRefNo{Reference}
+    % Project Meta Information
+    \ProjectFullTitle{Report title}
+    \ProjectAcronym{Acronyme}
+    \ProjectRefNo{Reference}
 
-% reporter Number and Title (according to DoA)
-\reportName{[Title as appears in the DoA]}
+    % reporter Number and Title (according to DoA)
+    \reportName{[Title as appears in the DoA]}
 
-% DOI Number (will be provided by the coordinator)
-\doiNumber{} % leave empty if no DOI Number is provided
-
-
-\reportAuthor{Author}
-\reportFPAuthor{}
+    % DOI Number (will be provided by the coordinator)
+    \doiNumber{} % leave empty if no DOI Number is provided
 
 
-% report Short Title
-\reportShortTile{Short title}
+    \reportAuthor{Author}
+    \reportFPAuthor{}
 
-% report Version, Contractual and Actual Date, Dissemination Level, Type
-\reportVersion{v1.0}
-\ActualDate{\today}
-\reportDissLevel{CO} % PU, PP, RE, CO
 
-% Provision of Keywords (about 5-10)
-\reportKeywords{[List of free keywords relevant to the report]}
+    % report Short Title
+    \reportShortTile{Short title}
 
-\reportType{Rapport}
+    % report Version, Contractual and Actual Date, Dissemination Level, Type
+    \reportVersion{v1.0}
+    \ActualDate{\today}
+    \reportDissLevel{CO} % PU, PP, RE, CO
 
-% report Status
-\reportStatus{d} %% d = draft, f = final, s = submitted
+    % Provision of Keywords (about 5-10)
+    \reportKeywords{[List of free keywords relevant to the report]}
+
+    \reportType{Rapport}
+
+    % report Status
+    \reportStatus{d} %% d = draft, f = final, s = submitted
     
     \makecover
     % page 3: table of contents
