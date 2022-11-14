@@ -10,8 +10,8 @@
 %%      2021/07/22 Adaptations for IRD-OB7 reporting
 
 %\usepackage{xstring}
-%\usepackage{lastpage}
-\usepackage{totpages}
+\usepackage{lastpage}
+%\usepackage{totpages}
 \usepackage{fancyhdr}
 \usepackage{stringstrings}
 \usepackage{ifthen}
@@ -237,10 +237,9 @@ OB7-\convertchar{\report@number}{.}{}-\noblanks{\report@captitle}-\report@status
 \renewcommand{\headrulewidth}{0pt}
 \lhead{\fancyplain{}{}}
 \chead{\fancyplain{}{
-	\begin{tabular}{m{0.25\linewidth} m{0.47\linewidth} m{0.25\linewidth}}
-		{\footnotesize \proj@acronym\ -- \proj@ref@no} & 
-		%\centering{\footnotesize{\report@stitle}} 
-		& 
+	\begin{tabular}{m{0.47\linewidth} m{0.25\linewidth} m{0.25\linewidth}}
+		\footnotesize{\report@stitle} &
+            \footnotesize{\proj@acronym\ -- \proj@ref@no} & 		 
 		\makebox[0.24\textwidth][r]{\includegraphics[width=0.40\linewidth]{graphics/logo}} \\
 		\hline
 	\end{tabular}

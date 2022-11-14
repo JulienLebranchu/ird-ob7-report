@@ -27,7 +27,8 @@
 %%
 \def\makefront{
   \newpage
-  \newgeometry{top=8.5mm,left=8.5mm,right=15mm,bottom=-14mm}
+  % \geometry{a4paper,top=2.50cm,left=2.50cm,right=2.50cm,bottom=3.30cm,headsep=0.50cm,footskip=0.75cm}
+  %\newgeometry{top=8.5mm,left=8.5mm,right=15mm,bottom=-14mm}
   % shadowed frame
   \ThisCenterWallPaper{1}{graphics/coverbkg}
   %	\global\@topnum\z@ % prevents figures from going at top of page
@@ -51,7 +52,7 @@
   \begin{minipage}{.85\linewidth}
 	\begin{center}
 		{\fontsize{18}{22}\bf \color{erigrid2blue} \proj@title}\\[10ex]
-		{\fontsize{14}{16} \rm \bf \proj@acronym } \\[2.5ex]
+		{\fontsize{14}{16} \rm \bf \proj@acronym} \\[2.5ex]
 		{\fontsize{14}{16} \rm \bf \proj@ref@no } \\[12.5ex]    	
     	%{\fontsize{14}{16}\bf \report@wpname} \\[10ex]
     	%\textit{Deliverable \report@number} \\[.6ex]
@@ -128,7 +129,7 @@
 %% 
 \def\makeback{
 	\clearpage
-	\newgeometry{a4paper,top=2.50cm,left=2.50cm,right=2.50cm,bottom=3.30cm,headsep=0.50cm,footskip=-0.77cm}	
+	\newgeometry{top=2.50cm,left=2.50cm,right=2.50cm,bottom=3.30cm,headsep=0.50cm,footskip=-0.77cm}	
 	\vspace*{-0.05cm}
 	\istdis	  %%%%% see istprog.sty
     \istmakechangelog
@@ -139,8 +140,8 @@
 %% cover page (front + back)
 %%
 \def\makecover{
-	\makefront
-	\makeback
+  \makefront
+  \makeback
 }
 
 \newcommand\Thickvrule[1]{%
